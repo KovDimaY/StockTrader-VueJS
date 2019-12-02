@@ -15,6 +15,9 @@
   export default {
     components: {
       appHeader: Header,
-    }
+    },
+    created() {
+      console.log(this.$store);
+    },
   }
 </script>
