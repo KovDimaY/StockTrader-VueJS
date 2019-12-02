@@ -3,7 +3,6 @@
     <app-header></app-header>
     <div class="row">
       <div class="col-md-12">
-        This is the main app component
         <router-view></router-view>
       </div>
     </div>

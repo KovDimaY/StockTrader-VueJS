@@ -1,34 +1,62 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <router-link to="/" class="navbar-brand">Stock Trader</router-link>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <router-link to="/" class="navbar-brand">Stock Trader</router-link>
+      </div>
 
-    <div class="navbar-collapse">
-      <ul class="navbar-nav">
-        <router-link
-          to="/portfolio"
-          class="nav-item"
-          activeClass="active"
-          tag="li"
-        >
-          <a class="nav-link">Portfolio</a>
-        </router-link>
-        <router-link
-          to="/stocks"
-          class="nav-item"
-          activeClass="active"
-          tag="li"
-        >
-          <a class="nav-link">Stocks</a>
-        </router-link>
-      </ul>
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav">
+          <router-link
+            to="/portfolio"
+            class="nav-item"
+            activeClass="active"
+            tag="li"
+          >
+            <a class="nav-link">Portfolio</a>
+          </router-link>
+          <router-link
+            to="/stocks"
+            class="nav-item"
+            activeClass="active"
+            tag="li"
+          >
+            <a class="nav-link">Stocks</a>
+          </router-link>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">End Day</a></li>
+          <li class="dropdown">
+            <a
+              href="#"
+              class="dropdown-toggle"
+              data-toggle="dropdown"
+              role="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Import/Export
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 </template>
 
+
+
+
 <style lang="scss" scoped>
   .navbar {
     margin-top: 20px;
-    border: solid lightgray 1px;
-    border-radius: 4px;
   }
 </style>
