@@ -6,4 +6,6 @@ const stocks = [
     { id: 5, name: 'Microsoft', price: 130 },
 ];
 
+export const getStocksById = id => stocks.find(stock => stock.id === id);
+
 export default stocks;
