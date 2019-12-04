@@ -19,7 +19,8 @@
       appHeader: Header,
     },
     created() {
-      console.log(this.$store);
+      console.log("Store", this.$store);
+      console.log("Router", this.$router)
     },
   }
 </script>

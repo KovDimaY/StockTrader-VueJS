@@ -6,4 +6,5 @@ export const routes = [
     { path: '/', component: Home },
     { path: '/portfolio', component: Portfolio },
     { path: '/stocks', component: Stocks },
+    { path: '*', redirect: '/' },
 ];
