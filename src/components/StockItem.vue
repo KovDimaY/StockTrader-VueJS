@@ -4,7 +4,7 @@
             <div class="panel-heading">
                 <h3 class="panel-title">
                     {{ stock.name }}
-                    <small>(${{ stock.price }})</small>
+                    <small>({{ stock.price | currency }})</small>
                 </h3>
             </div>
             <div class="panel-body">
@@ -14,13 +14,15 @@
                         class="form-control"
                         placeholder="Quantity"
                         v-model.number="quantity"
+                        :class="{ danger: insufficientFunds }"
                     >
                 </div>
                 <div class="pull-right">
                     <button
                         class="btn btn-success"
                         @click="buyStock"
-                        :disabled="quantity < 1 || !Number.isInteger(quantity)"
+                        :disabled="insufficientFunds || invalidNumber"
+                        :title="insufficientFunds ? 'You do not have enough money' : ''"
                     >
                         Buy
                     </button>
@@ -36,6 +38,17 @@
         data: () => ({
             quantity: 0
         }),
+        computed: {
+            funds() {
+                return this.$store.getters.funds;
+            },
+            insufficientFunds() {
+                return this.quantity * this.stock.price > this.funds;
+            },
+            invalidNumber() {
+                return this.quantity < 1 || !Number.isInteger(this.quantity);
+            }
+        },
         methods: {
             buyStock() {
                 if (this.quantity > 0) {
@@ -52,3 +65,9 @@
         }
     }
 </script>
+
+<style lang="scss" scoped>
+    .danger {
+        border: 1px solid red;
+    }
+</style>
