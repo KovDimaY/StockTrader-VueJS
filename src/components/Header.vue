@@ -27,7 +27,11 @@
         <strong class="navbar-text navbar-right">Funds: {{ funds | currency }}</strong>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#" @click="endDay">End Day</a></li>
-          <li class="dropdown">
+          <li
+            class="dropdown"
+            :class="{ open: isDropdownOpen }"
+            @click="isDropdownOpen = !isDropdownOpen"
+          >
             <a
               href="#"
               class="dropdown-toggle"
@@ -36,15 +40,12 @@
               aria-haspopup="true"
               aria-expanded="false"
             >
-              Import/Export
+              Progress
               <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
+              <li><a href="#" @click="handleImportProgress">Import Progress</a></li>
+              <li><a href="#" @click="handleExportProgress">Export Progress</a></li>
             </ul>
           </li>
         </ul>
@@ -55,7 +56,13 @@
 
 <script>
   import { mapActions } from 'vuex';
+
   export default {
+    data() {
+      return {
+        isDropdownOpen: false,
+      }
+    },
     computed: {
       funds() {
         return this.$store.getters.funds;
@@ -63,11 +70,24 @@
     },
     methods: {
       ...mapActions([
-        'randomizeStocks'
+        'randomizeStocks',
+        'importProgress',
       ]),
       endDay() {
         this.randomizeStocks();
-      }
+      },
+      handleImportProgress() {
+        this.importProgress();
+      },
+      handleExportProgress() {
+        const progress = {
+          funds: this.$store.getters.funds,
+          stockPortfolio: this.$store.getters.stockPortfolio,
+          stocks: this.$store.getters.stocks,
+        };
+
+        this.$http.put('progress.json', progress);
+      },
     },
   }
 </script>
