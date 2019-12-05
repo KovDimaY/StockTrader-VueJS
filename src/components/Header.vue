@@ -21,7 +21,7 @@
             activeClass="active"
             tag="li"
           >
-            <a class="nav-link">Stocks</a>
+            <a class="nav-link">Market</a>
           </router-link>
         </ul>
         <strong class="navbar-text navbar-right">Funds: {{ funds | currency }}</strong>

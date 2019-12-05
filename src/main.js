@@ -4,19 +4,20 @@ import VueResource from 'vue-resource';
 
 import App from './App.vue';
 import store from './store';
+import Config from './config';
 import { routes } from './routes';
 
 Vue.use(VueRouter);
 Vue.use(VueResource);
 
-Vue.http.options.root = 'https://stocktrading-vuejs.firebaseio.com/';
+Vue.http.options.root = Config.firebase.rootUrl;
 
 Vue.filter('currency', value => `$${value.toLocaleString()}`)
 
 const router = new VueRouter({
   mode: 'history',
   routes,
-})
+});
 
 new Vue({
   el: '#app',

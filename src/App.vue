@@ -19,8 +19,7 @@
       appHeader: Header,
     },
     created() {
-      console.log("Store", this.$store);
-      console.log("Router", this.$router)
+      console.log("App", this);
     },
   }
 </script>
