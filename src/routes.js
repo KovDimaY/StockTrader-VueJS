@@ -1,6 +1,6 @@
-import Home from './pages/Home.vue';
-import Portfolio from './pages/Portfolio.vue';
-import Market from './pages/Stocks.vue';
+import HomePage from './pages/Home.vue';
+import PortfolioPage from './pages/Portfolio.vue';
+import MarketPage from './pages/Stocks.vue';
 
 import Config from './config';
 
@@ -9,15 +9,15 @@ const { home, portfolio, market } = Config.routes;
 export const routes = [
     {
         path: home,
-        component: Home
+        component: HomePage
     },
     {
         path: portfolio,
-        component: Portfolio
+        component: PortfolioPage
     },
     {
         path: market,
-        component: Market
+        component: MarketPage
     },
     {
         path: '*',
