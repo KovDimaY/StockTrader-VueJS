@@ -1,4 +1,4 @@
-import { getStocksById } from '../data/stocks';
+import { getStocksById } from '../../data/stocks';
 
 const state = {
     funds: 10000,
@@ -45,7 +45,7 @@ const actions = {
 
 const getters = {
     funds: state => state.funds,
-    stockPortfolio: (state) => (
+    stockPortfolio: state => (
         state.stocks.map(stock => ({
             ...getStocksById(stock.id),
             quantity: stock.quantity,
