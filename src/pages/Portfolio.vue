@@ -24,12 +24,12 @@
 </template>
 
 <script>
-  import PortfolioItem from '../components/PortfolioItem';
+  import PortfolioStockItem from '../components/PortfolioStockItem';
   import Config from '../config';
 
   export default {
     components: {
-      appPortfolioItem: PortfolioItem,
+      appPortfolioItem: PortfolioStockItem,
     },
     data() {
       return {

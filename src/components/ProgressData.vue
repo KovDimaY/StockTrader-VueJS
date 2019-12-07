@@ -6,13 +6,12 @@
         <div class="panel-body">
             <ul class="list-group">
                 <li class="list-group-item">
-                    <strong>Initial capital:</strong> {{ 10000 | currency }}
+                    <strong>Initial capital:</strong> {{ initialFunds | currency }}
                 </li>
                 <li class="list-group-item">
-                    <strong>Current funds:</strong> {{ 5000 | currency }}
-                    <span class="label label-danger">
-                    <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span> 50%
-                    </span>
+                    <strong>Current funds:</strong> {{ funds | currency }}
+                    <app-progress-label :previous="initialFunds" :current="funds">
+                    </app-progress-label>
                 </li>
                 <li class="list-group-item">
                     <strong>Days trading:</strong> {{ daysTrading }}
@@ -74,18 +73,25 @@
 <script>
     import { mapActions } from 'vuex';
     import Config from '../config';
+    import ProgressLabelComponent from './Common/ProgressLabel';
 
     export default {
         data() {
             return {
-                daysTrading: 200,
                 marketUrl: Config.routes.market,
+                initialFunds: Config.gameBalance.initialFunds,
             };
         },
         computed: {
             portfolio() {
                 return this.$store.getters.stockPortfolio;
-            }
+            },
+            funds() {
+                return this.$store.getters.funds;
+            },
+            daysTrading() {
+                return this.$store.getters.daysTrading;
+            },
         },
         methods: {
             ...mapActions(['importProgress']),
@@ -105,6 +111,9 @@
                 this.$http.put('progress.json', progress);
             },
         },
+        components: {
+            appProgressLabel: ProgressLabelComponent,
+        }
     }
 </script>
 

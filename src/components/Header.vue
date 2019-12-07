@@ -43,9 +43,10 @@
       }
     },
     methods: {
-      ...mapActions(['randomizeStocks']),
+      ...mapActions(['randomizeStocks', 'finishDay']),
       endDay() {
         this.randomizeStocks();
+        this.finishDay();
       }
     },
   }

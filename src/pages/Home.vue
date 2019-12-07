@@ -1,12 +1,24 @@
 <template>
-  <div class="cards-wrapper">
-    <div class="card-container">
-      <app-profile-data></app-profile-data>
+  <v-fragment>
+    <div class="cards-wrapper">
+      <div class="card-container">
+        <app-profile-data></app-profile-data>
+      </div>
+      <div class="card-container">
+        <app-progress-data></app-progress-data>
+      </div>
     </div>
-    <div class="card-container">
-      <app-progress-data></app-progress-data>
+    <div class="smart-quote">
+      <p class="lead text-center">
+        "The only thing standing between you and your goal
+        is the bullshit story you keep telling yourself
+        as to why you can't achieve it."
+      </p>
+      <p class="text-right">
+        <strong>Jordan Belfort, The Wolf of Wall Street</strong>
+      </p>
     </div>
-  </div>
+  </v-fragment>
 </template>
 
 <script>
@@ -44,6 +56,11 @@
         width: calc(50% - 30px);
         margin: 0 15px;
       }
+    }
+
+    .smart-quote {
+      max-width: 600px;
+      margin: 50px auto auto;
     }
   }
 </style>

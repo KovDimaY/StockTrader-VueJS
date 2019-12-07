@@ -8,4 +8,8 @@ export default {
         portfolio: '/portfolio',
         market: '/stocks',
     },
+    gameBalance: {
+        initialFunds: 10000,
+        finishDayPrice: 100,
+    }
 };
