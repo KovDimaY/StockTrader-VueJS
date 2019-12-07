@@ -10,7 +10,7 @@
     <div class="col-sm-12 text-center">
       <span class="icon glyphicon glyphicon-briefcase mb-medium" aria-hidden="true"></span>
       <p class="lead">
-        You do not have any stocks in your portfolio yet!
+        You do not have any stocks in your portfolio at the moment!
       </p>
       <p class="lead mb-medium">
         Go to the market and buy some in order to earn a

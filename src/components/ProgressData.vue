@@ -23,7 +23,7 @@
             <div class="row text-center">
                 <div class="col-xs-6">
                     <button type="button" class="btn btn-primary">Save</button>
-                    <button type="button" class="btn btn-warning">Reset</button>
+                    <button type="button" class="btn btn-warning">Load</button>
                 </div>
                 <div class="col-xs-6">
                     <button
@@ -60,7 +60,7 @@
                 </div>
                 <div v-else>
                     <span class="glyphicon glyphicon-briefcase mb-medium" aria-hidden="true"></span>
-                    <p>You do not have any stocks yet.</p>
+                    <p>You do not have any stocks at the moment.</p>
                     <router-link :to="marketUrl" class="btn btn-success buy-stocks-button">
                         Buy Stocks!
                     </router-link>
