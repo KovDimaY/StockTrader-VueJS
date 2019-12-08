@@ -12,5 +12,5 @@ export const importProgress = ({ commit }) => {
                 commit('SET_STOCKS', stocks);
                 commit('SET_PORTFOLIO', portfolio);
             }
-        })
+        });
 };

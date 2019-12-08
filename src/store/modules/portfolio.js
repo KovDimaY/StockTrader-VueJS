@@ -2,6 +2,7 @@ import { getStocksById } from '../../data/stocks';
 
 const state = {
     funds: 10000,
+    daysTrading: 0,
     stocks: [],
 };
 
@@ -34,17 +35,25 @@ const mutations = {
     'SET_PORTFOLIO' (state, portfolio) {
         state.funds = portfolio.funds;
         state.stocks = portfolio.stockPortfolio || [];
+    },
+    'INCREASE_DAYS_COUNT' (state) {
+        state.daysTrading += 1;
+        state.funds -= 100;
     }
 };
 
 const actions = {
     sellStock({ commit }, order) {
         commit('SELL_STOCK', order);
+    },
+    finishDay({ commit }) {
+        commit('INCREASE_DAYS_COUNT');
     }
 };
 
 const getters = {
     funds: state => state.funds,
+    daysTrading: state => state.daysTrading,
     stockPortfolio: state => (
         state.stocks.map(stock => ({
             ...getStocksById(stock.id),
