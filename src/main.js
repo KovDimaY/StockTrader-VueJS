@@ -13,7 +13,7 @@ Vue.use(VueResource);
 Vue.http.options.root = Config.firebase.rootUrl;
 
 Vue.filter('currency', value => `$${value.toLocaleString()}`);
-Vue.filter('no-sign', value => Math.abs(Number(value)));
+Vue.filter('no-sign', value => Math.abs(value));
 
 const router = new VueRouter({
   mode: 'history',

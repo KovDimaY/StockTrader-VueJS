@@ -1,11 +1,11 @@
 <template>
     <span
         class="label"
-        :class="{'label-danger': progress < 0, 'label-success': progress >= 0}"
+        :class="getLabelClass()"
     >
         <span
             class="glyphicon"
-            :class="{'glyphicon-arrow-down': progress < 0, 'glyphicon-arrow-up': progress >= 0 }"
+            :class="getArrowClass()"
             aria-hidden="true"
         >
         </span> {{ progress | no-sign }}%
@@ -13,17 +13,29 @@
 </template>
 
 <script>
-  import { mapActions } from 'vuex';
+    export default {
+        props: ['previous', 'current'],
+        computed: {
+            progress() {
+                const decimal = (this.current - this.previous) / this.previous;
 
-  export default {
-    props: ['previous', 'current'],
-    computed: {
-      progress() {
-        const decimal = (this.current - this.previous) / this.previous;
-
-        return Math.round(100 * decimal);
-      }
-    },
-  }
+                return Math.round(100 * decimal);
+            }
+        },
+        methods: {
+            getLabelClass() {
+                return {
+                    'label-danger': this.progress < 0,
+                    'label-success': this.progress >= 0,
+                };
+            },
+            getArrowClass() {
+                return {
+                    'glyphicon-arrow-down': this.progress < 0,
+                    'glyphicon-arrow-up': this.progress >= 0,
+                };
+            },
+        },
+    }
 </script>
 

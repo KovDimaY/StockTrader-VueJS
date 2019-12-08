@@ -48,6 +48,11 @@
     }
   }
 
+  .smart-quote {
+    padding: 0px 15px;
+    margin: 15px auto 50px;
+  }
+
   @media (min-width: 768px) {
     .cards-wrapper {
       flex-direction: row;
@@ -60,7 +65,7 @@
 
     .smart-quote {
       max-width: 600px;
-      margin: 50px auto auto;
+      margin: 50px auto 50px;
     }
   }
 </style>
