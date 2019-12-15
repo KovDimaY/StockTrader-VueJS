@@ -88,6 +88,96 @@ const mercedes = {
     link: 'https://en.wikipedia.org/wiki/Mercedes-Benz',
 };
 
+const microsoft = {
+    id: 11,
+    name: 'Microsoft',
+    price: 155,
+    image: 'microsoft.png',
+    description: 'Microsoft Corporation is an American multinational technology company with headquarters in Redmond, Washington. It develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.',
+    link: 'https://en.wikipedia.org/wiki/Microsoft',
+};
+
+const nestle = {
+    id: 12,
+    name: 'Nestle',
+    price: 100,
+    image: 'nestle.png',
+    description: 'Nestlé S.A. is a Swiss multinational food and drink processing conglomerate corporation headquartered in Vevey, Vaud, Switzerland. It is the largest food company in the world, measured by revenues and other metrics, since 2014.',
+    link: 'https://en.wikipedia.org/wiki/Nestl%C3%A9',
+};
+
+const netflix = {
+    id: 13,
+    name: 'Netflix',
+    price: 300,
+    image: 'netflix.png',
+    description: 'Netflix, Inc. is an American media-services provider and production company headquartered in Los Gatos, California, founded in 1997 by Reed Hastings and Marc Randolph in Scotts Valley, California.',
+    link: 'https://en.wikipedia.org/wiki/Netflix',
+};
+
+const nike = {
+    id: 14,
+    name: 'Nike',
+    price: 100,
+    image: 'nike.png',
+    description: 'Nike, Inc. is an American multinational corporation that is engaged in the design, development, manufacturing, and worldwide marketing and sales of footwear, apparel, equipment, accessories, and services. The company is headquartered near Beaverton, Oregon, in the Portland metropolitan area.',
+    link: 'https://en.wikipedia.org/wiki/Nike,_Inc.',
+};
+
+const samsung = {
+    id: 15,
+    name: 'Samsung',
+    price: 40,
+    image: 'samsung.png',
+    description: 'Samsung Electronics Co., Ltd. is a South Korean multinational electronics company headquartered in Suwon, South Korea. Due to some circular ownership, it is the flagship company of the Samsung chaebol, accounting for 70% of the group\'s revenue in 2012.',
+    link: 'https://en.wikipedia.org/wiki/Samsung_Electronics',
+};
+
+const sony = {
+    id: 16,
+    name: 'Sony',
+    price: 60,
+    image: 'sony.png',
+    description: 'Sony Corporation is a Japanese multinational conglomerate corporation headquartered in Kōnan, Minato, Tokyo. Its diversified business includes consumer and professional electronics, gaming, entertainment and financial services.',
+    link: 'https://en.wikipedia.org/wiki/Sony',
+};
+
+const tesla = {
+    id: 17,
+    name: 'Tesla',
+    price: 360,
+    image: 'tesla.png',
+    description: 'Tesla, Inc., is an American automotive and energy company based in Palo Alto, California. The company specializes in electric car manufacturing and, through its SolarCity subsidiary, solar panel manufacturing.',
+    link: 'https://en.wikipedia.org/wiki/Tesla,_Inc.',
+};
+
+const volkswagen = {
+    id: 18,
+    name: 'Volkswagen',
+    price: 180,
+    image: 'volkswagen.png',
+    description: 'Volkswagen AG, known internationally as the Volkswagen Group, is a German multinational automotive manufacturing company headquartered in Wolfsburg, Lower Saxony, Germany and indirectly majority owned by Austrian Porsche and Piëch families.',
+    link: 'https://en.wikipedia.org/wiki/Volkswagen_Group',
+};
+
+const walmart = {
+    id: 19,
+    name: 'Walmart',
+    price: 120,
+    image: 'walmart.png',
+    description: 'Walmart Inc. is an American multinational retail corporation that operates a chain of hypermarkets, discount department stores, and grocery stores, headquartered in Bentonville, Arkansas. The company was founded by Sam Walton in 1962 and incorporated on October 31, 1969.',
+    link: 'https://en.wikipedia.org/wiki/Walmart',
+};
+
+const waltdisney = {
+    id: 20,
+    name: 'Walt Disney',
+    price: 150,
+    image: 'waltdisney.png',
+    description: 'The Walt Disney Company, commonly known as Disney, is an American diversified multinational mass media and entertainment conglomerate headquartered at the Walt Disney Studios complex in Burbank, California.',
+    link: 'https://en.wikipedia.org/wiki/The_Walt_Disney_Company',
+};
+
 const stocks = [
     adidas,
     alibaba,
@@ -99,6 +189,16 @@ const stocks = [
     facebook,
     mcdonalds,
     mercedes,
+    microsoft,
+    nestle,
+    netflix,
+    nike,
+    samsung,
+    sony,
+    tesla,
+    volkswagen,
+    walmart,
+    waltdisney,
 ];
 
 export const getStocksById = id => stocks.find(stock => stock.id === id);
