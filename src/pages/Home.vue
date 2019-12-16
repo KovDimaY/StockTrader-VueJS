@@ -1,5 +1,5 @@
 <template>
-  <v-fragment>
+  <div>
     <div class="cards-wrapper">
       <div class="card-container">
         <app-profile-data></app-profile-data>
@@ -18,7 +18,7 @@
         <strong>Jordan Belfort, The Wolf of Wall Street</strong>
       </p>
     </div>
-  </v-fragment>
+  </div>
 </template>
 
 <script>
