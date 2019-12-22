@@ -126,9 +126,8 @@
             handleSaveProgress() {
                 const progress = this.getProgress();
 
-                localStorage.setItem('progress', JSON.stringify(progress));
+                localStorage.setItem(Config.localStorageKeys.PROGRESS, JSON.stringify(progress));
                 alert('Your progress is saved');
-                console.log("handleSaveProgress", progress);
             },
             handleExportProgress() {
                 const progress = this.getProgress();

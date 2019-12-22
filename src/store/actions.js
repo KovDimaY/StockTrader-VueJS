@@ -25,7 +25,7 @@ export const importProgress = ({ commit }) => {
 };
 
 export const loadProgress = ({ commit }) => {
-    const rawProgress = localStorage.getItem('progress');
+    const rawProgress = localStorage.getItem(Config.localStorageKeys.PROGRESS);
 
     if (rawProgress) {
         try {
