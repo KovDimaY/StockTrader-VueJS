@@ -22,8 +22,20 @@
             </div>
             <div class="row text-center">
                 <div class="col-xs-6">
-                    <button type="button" class="btn btn-primary">Save</button>
-                    <button type="button" class="btn btn-warning">Load</button>
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        @click="handleSaveProgress"
+                    >
+                        Save
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-warning"
+                        @click="handleLoadProgress"
+                    >
+                        Load
+                    </button>
                 </div>
                 <div class="col-xs-6">
                     <button
@@ -94,19 +106,31 @@
             },
         },
         methods: {
-            ...mapActions(['importProgress']),
+            ...mapActions(['importProgress', 'loadProgress']),
+            getProgress() {
+                return {
+                    funds: this.$store.getters.funds,
+                    stockPortfolio: this.$store.getters.stockPortfolio,
+                    stocks: this.$store.getters.stocks,
+                };
+            },
             getImageUrl(filename) {
                 return require(`../assets/stocks/${filename}`);
             },
             handleImportProgress() {
                 this.importProgress();
             },
+            handleLoadProgress() {
+                this.loadProgress();
+            },
+            handleSaveProgress() {
+                const progress = this.getProgress();
+
+                localStorage.setItem(Config.localStorageKeys.PROGRESS, JSON.stringify(progress));
+                alert('Your progress is saved');
+            },
             handleExportProgress() {
-                const progress = {
-                    funds: this.$store.getters.funds,
-                    stockPortfolio: this.$store.getters.stockPortfolio,
-                    stocks: this.$store.getters.stocks,
-                };
+                const progress = this.getProgress();
 
                 this.$http.put('progress.json', progress);
             },

@@ -11,5 +11,8 @@ export default {
     gameBalance: {
         initialFunds: 10000,
         finishDayPrice: 100,
-    }
+    },
+    localStorageKeys: {
+        PROGRESS: 'progress',
+    },
 };
