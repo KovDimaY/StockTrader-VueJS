@@ -10,6 +10,12 @@ const mutations = {
     },
     'RANDOMIZE_STOCKS': state => (
         state.stocks.forEach(stock => {
+            if (stock.priceHistory) {
+                stock.priceHistory.push(stock.price);
+            } else {
+                stock.priceHistory = [stock.price];
+            }
+            
             stock.price = Math.round(stock.price * (0.5 + Math.random()));
         })
     ),
@@ -21,7 +27,7 @@ const actions = {
     },
     randomizeStocks: ({ commit }) => {
         commit('RANDOMIZE_STOCKS');
-    }
+    },
 };
 
 const getters = {
